@@ -17,6 +17,8 @@ const portfolioData = {
             icon: "🚢",
             tag: "Data Analysis",
             description: "In-depth exploratory data analysis and feature engineering on the classic Titanic dataset to uncover survival patterns and statistically significant correlations between passenger attributes.",
+            tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+            results: "Identified the strongest survival signals and turned the analysis into a reusable feature-engineering notebook.",
             githubLink: "https://github.com/Mahian-Hoq/ml-notebooks-from-scratch/blob/main/Titanic_EDA.ipynb"
         },
         {
@@ -25,6 +27,8 @@ const portfolioData = {
             icon: "❤️",
             tag: "EDA",
             description: "Comprehensive analysis of clinical features using pandas, matplotlib, and seaborn to identify key indicators and risk factors for heart disease across a diverse patient population.",
+            tech: ["Python", "Pandas", "Matplotlib", "Seaborn", "Scikit-Learn"],
+            results: "Highlighted the most influential clinical indicators and isolated clear high-risk patterns for follow-up modeling.",
             githubLink: "https://github.com/Mahian-Hoq/ml-notebooks-from-scratch/blob/main/HeartDisease_EDA.ipynb"
         },
         {
@@ -33,6 +37,8 @@ const portfolioData = {
             icon: "🔢",
             tag: "Scientific Computing",
             description: "Advanced array manipulations, broadcasting mechanics, linear algebra operations, and high-performance mathematical computations using NumPy, documented as an interactive notebook.",
+            tech: ["Python", "NumPy", "Jupyter Notebook"],
+            results: "Built a compact set of practice exercises covering broadcasting, matrix ops, and vectorized computation.",
             githubLink: "https://github.com/Mahian-Hoq/ml-notebooks-from-scratch/blob/main/Numpy.ipynb"
         }
     ],
@@ -44,6 +50,8 @@ const portfolioData = {
             icon: "🧠",
             tag: "Machine Learning",
             description: "Ground-up implementation of core ML algorithms — including Decision Trees, Support Vector Machines, and K-Nearest Neighbors — built entirely from first principles without high-level libraries.",
+            tech: ["Python", "NumPy", "Mathematics", "Jupyter Notebook"],
+            results: "Recreated core algorithms from first principles to deepen understanding of model mechanics and training behavior.",
             githubLink: "https://github.com/Mahian-Hoq/ml-notebooks-from-scratch/blob/main/Linear_Regression_with_scikit_learn_%2B_Evaluation_Metrics.ipynb"
         },
         {
@@ -52,6 +60,8 @@ const portfolioData = {
             icon: "📈",
             tag: "Predictive Modeling",
             description: "End-to-end predictive modeling pipeline featuring data preprocessing, polynomial feature engineering, regularization tuning, and comprehensive performance evaluation using Scikit-Learn.",
+            tech: ["Python", "Scikit-Learn", "Pandas", "NumPy", "Matplotlib"],
+            results: "Built a full regression workflow with preprocessing, feature engineering, and evaluation-ready metrics.",
             githubLink: "https://github.com/Mahian-Hoq/ml-notebooks-from-scratch/blob/main/Linear_Regression_from_Scratch_Using_Numpy_(Matrix_Form).ipynb"
         }
     ],
@@ -63,6 +73,8 @@ const portfolioData = {
             icon: "🔐",
             tag: "Security",
             description: "A desktop application for encrypting and decrypting files at rest using AES-256 encryption, featuring a clean GUI, secure key management, and drag-and-drop file handling.",
+            tech: ["Java", "AES-256", "Swing", "File I/O"],
+            results: "Delivered secure file protection with encryption and decryption flows plus a usable desktop interface.",
             githubLink: "https://github.com/Mahian-Hoq/Secure_Vault"
         },
         {
@@ -71,6 +83,8 @@ const portfolioData = {
             icon: "🚌",
             tag: "Full-Stack",
             description: "A comprehensive transport management and real-time tracking solution for a university environment, built with a relational database backend and an intuitive admin dashboard.",
+            tech: ["Java", "MySQL", "SQL", "Swing"],
+            results: "Centralized transport operations into a database-backed system for tracking and admin workflows.",
             githubLink: "https://github.com/Mahian-Hoq/diu-smart-transport"
         },
         {
@@ -79,6 +93,8 @@ const portfolioData = {
             icon: "💼💵",
             tag: "UI/UX",
             description: "A sleek, glassmorphism-inspired dashboard for visualizing and tracking cryptocurrency wallet portfolios, featuring live chart animations and a fully responsive dark-mode design.",
+            tech: ["HTML", "CSS", "JavaScript", "Chart.js"],
+            results: "Created a responsive wallet dashboard with a polished glassmorphism UI and clear portfolio visibility.",
             githubLink: "https://github.com/Mahian-Hoq/glass-wallet"
         },
         {
@@ -87,6 +103,8 @@ const portfolioData = {
             icon: "🏦",
             tag: "Backend",
             description: "A robust banking application featuring secure user authentication, multi-account management, transaction history, and full database integration with ACID-compliant operations.",
+            tech: ["Java", "MySQL", "SQL", "OOP"],
+            results: "Implemented structured account handling and transaction history with persistent database operations.",
             githubLink: "https://github.com/Mahian-Hoq/Banking-System-with-DB"
         }
     ]

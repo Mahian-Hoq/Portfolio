@@ -172,53 +172,106 @@
             overflow: hidden;
         }
 
-        /* Center Node (Typewriter) */
-        .center-node {
+        .interaction-hint {
             position: absolute;
-            z-index: 10;
-            padding: 15px 30px;
-            border-radius: 50px;
+            right: 28px;
+            bottom: 24px;
+            z-index: 20;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 14px;
+            font-family: 'Inter', 'Roboto', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            color: rgba(225, 250, 255, 0.92);
+            background: rgba(10, 20, 26, 0.36);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 0 14px rgba(0, 242, 254, 0.08);
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .interaction-hint-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #00f2fe;
+            box-shadow: 0 0 8px rgba(0, 242, 254, 0.75);
+            animation: hintPulse 1.9s ease-in-out infinite;
+        }
+
+        @keyframes hintPulse {
+            0%,
+            100% {
+                transform: scale(0.9);
+                opacity: 0.75;
+            }
+
+            50% {
+                transform: scale(1.25);
+                opacity: 1;
+            }
+        }
+
+        /* Center Profile Hub */
+        .profile-hub {
+            position: absolute;
+            z-index: 15;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 26px;
+            border-radius: 28px;
             background: rgba(20, 20, 30, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
-            font-size: 1.2rem;
-            white-space: nowrap;
-            text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
-            transition: all 0.3s ease;
-            cursor: pointer;
+            box-shadow: 0 0 32px rgba(0, 242, 254, 0.18);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            text-align: center;
+            pointer-events: none;
         }
 
-        .center-node:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(0, 242, 254, 0.5);
-            text-shadow: 0 0 15px rgba(0, 242, 254, 1);
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(0, 242, 254, 0.95);
+            box-shadow: 0 0 24px rgba(0, 242, 254, 0.45);
+            background: radial-gradient(circle at 30% 30%, rgba(79, 172, 254, 0.95), rgba(0, 120, 170, 0.95));
         }
 
-        .typewriter-cursor {
-            display: inline-block;
-            width: 2px;
-            margin-left: 2px;
-            animation: blink 0.75s step-end infinite;
+        .profile-name {
+            margin: 2px 0 0;
+            font-size: 1.45rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #f7fdff;
+            line-height: 1.25;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.28);
         }
 
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
+        .profile-subtitle {
+            margin: 0;
+            font-size: 0.94rem;
+            font-weight: 500;
+            color: rgba(0, 242, 254, 0.9);
+            line-height: 1.4;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.45);
         }
 
         /* 3D Orbit Track */
         .tilt-container {
-            width: 600px;
-            height: 600px;
+            width: 760px;
+            height: 760px;
             transform: rotateX(60deg) rotateY(45deg);
             transform-style: preserve-3d;
             position: relative;
@@ -275,21 +328,26 @@
         }
 
         .node-1 {
-            top: 0%;
+            top: 8%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
         .node-2 {
-            top: 75%;
-            left: 93.3%;
+            top: 78%;
+            left: 92%;
             transform: translate(-50%, -50%);
         }
 
         .node-3 {
-            top: 75%;
-            left: 6.7%;
+            top: 78%;
+            left: 8%;
             transform: translate(-50%, -50%);
+        }
+
+        #hero-section a {
+            color: inherit;
+            text-decoration: none;
         }
 
         .inner-content {
@@ -648,6 +706,54 @@
             margin-bottom: 35px;
         }
 
+        .modal-case-study {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .modal-section-label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(0, 242, 254, 0.78);
+        }
+
+        .tech-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 242, 254, 0.24);
+            background: rgba(0, 242, 254, 0.06);
+            color: rgba(225, 250, 255, 0.9);
+            font-size: 0.78rem;
+            line-height: 1;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.06);
+        }
+
+        .modal-results {
+            margin: 0;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(0, 242, 254, 0.06);
+            border: 1px solid rgba(0, 242, 254, 0.16);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.98rem;
+            line-height: 1.65;
+            box-shadow: inset 0 0 20px rgba(0, 242, 254, 0.04);
+        }
+
         .modal-github-btn {
             display: inline-block;
             padding: 13px 32px;
@@ -705,6 +811,39 @@
         }
 
         @media (max-width: 768px) {
+            .profile-hub {
+                padding: 16px 20px;
+                gap: 8px;
+            }
+
+            .interaction-hint {
+                right: 12px;
+                bottom: 14px;
+                max-width: calc(100% - 24px);
+                white-space: normal;
+                line-height: 1.35;
+                font-size: 0.74rem;
+                padding: 7px 10px;
+            }
+
+            .profile-avatar {
+                width: 98px;
+                height: 98px;
+            }
+
+            .profile-name {
+                font-size: 1.1rem;
+            }
+
+            .profile-subtitle {
+                font-size: 0.82rem;
+            }
+
+            .tilt-container {
+                width: 560px;
+                height: 560px;
+            }
+
             #global-header {
                 width: 95%;
                 max-width: 450px;
@@ -1092,8 +1231,10 @@
             flex-direction: column;
             text-decoration: none !important;
             color: inherit !important;
-            overflow: hidden; /* Keeps the image inside the rounded corners */
-            text-align: left; /* Ensures text doesn't center-align like some links */
+            overflow: hidden;
+            /* Keeps the image inside the rounded corners */
+            text-align: left;
+            /* Ensures text doesn't center-align like some links */
         }
 
         .achievement-card:hover {
@@ -1122,7 +1263,8 @@
             overflow: hidden;
             z-index: 1;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            height: 140px; /* Default height for small/wide */
+            height: 140px;
+            /* Default height for small/wide */
             flex-shrink: 0;
         }
 
@@ -1249,16 +1391,21 @@
          PHASE 1: HERO SECTION
          ========================================= -->
         <section id="hero-section">
-            <div class="center-node">
-                <span id="typewriter-text"></span><span class="typewriter-cursor">|</span>
+            <div class="profile-hub">
+                <img class="profile-avatar" src="assets/profile/profile-avatar.jpg" alt="Mahian Hoq Mozumder profile">
+                <h1 class="profile-name">Mahian Hoq Mozumder</h1>
+                <p class="profile-subtitle">Aspiring Data Science Student</p>
             </div>
 
             <div class="tilt-container">
                 <div class="orbit-ring" id="orbit-ring">
                     <svg class="svg-overlay" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <polygon points="50,0 93.3,75 6.7,75" fill="none" stroke="rgba(0, 242, 254, 0.5)"
-                            stroke-width="0.5" vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision"
-                            stroke-linejoin="round" />
+                        <line x1="50" y1="38" x2="50" y2="8" stroke="rgba(0, 242, 254, 0.5)" stroke-width="0.5"
+                            vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision" />
+                        <line x1="61" y1="58" x2="92" y2="78" stroke="rgba(0, 242, 254, 0.5)" stroke-width="0.5"
+                            vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision" />
+                        <line x1="39" y1="58" x2="8" y2="78" stroke="rgba(0, 242, 254, 0.5)" stroke-width="0.5"
+                            vector-effect="non-scaling-stroke" shape-rendering="geometricPrecision" />
                     </svg>
 
                     <div class="node-wrapper node-1" data-skill="A Data Science Analyst">
@@ -1282,6 +1429,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="interaction-hint">
+                <span class="interaction-hint-dot" aria-hidden="true"></span>
+                <span>Click any orb to see the related project.</span>
             </div>
         </section>
 
@@ -1365,7 +1517,7 @@
                     class="primary-btn">Say Hello</a>
 
                 <div class="social-links">
-                    <a href="https://github.com" target="_blank" class="social-icon">
+                    <a href="https://github.com/Mahian-Hoq" target="_blank" class="social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path
@@ -1373,7 +1525,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://linkedin.com" target="_blank" class="social-icon">
+                    <a href="www.linkedin.com/in/mahian-hoq-111975265" target="_blank" class="social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path
@@ -1381,7 +1533,7 @@
                         </svg>
                     </a>
 
-                    <a href="https://facebook.com" target="_blank" class="social-icon">
+                    <a href="https://www.facebook.com/mahian.hoque.mozumder/" target="_blank" class="social-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                             viewBox="0 0 24 24">
                             <path
@@ -1400,6 +1552,16 @@
             <h2 class="modal-title" id="modal-title"></h2>
             <hr class="modal-hr">
             <p class="modal-desc" id="modal-desc"></p>
+            <div class="modal-case-study">
+                <div>
+                    <span class="modal-section-label">Technologies</span>
+                    <div class="tech-pills" id="modal-tech"></div>
+                </div>
+                <div>
+                    <span class="modal-section-label">Outcome / Results</span>
+                    <p class="modal-results" id="modal-results"></p>
+                </div>
+            </div>
             <a href="#" id="modal-github" class="modal-github-btn">View on GitHub</a>
         </div>
     </div>
@@ -1407,28 +1569,6 @@
 
     <script src="projectsData.js"></script>
     <script>
-        /* =========================================
-           PHASE 1: TYPEWRITER
-           ========================================= */
-        (() => {
-            const texts = ["Hi, This Is Mahian Hoq Mozumder", "This Is My Portfolio"];
-            const el = document.getElementById("typewriter-text");
-            const typeSpeed = 100, backSpeed = 50, pauseTime = 2000;
-            let ti = 0, ci = 0, deleting = false;
-
-            function tick() {
-                const cur = texts[ti];
-                ci += deleting ? -1 : 1;
-                el.textContent = cur.slice(0, ci);
-                let delay = deleting ? backSpeed : typeSpeed;
-                if (!deleting && ci === cur.length) { delay = pauseTime; deleting = true; }
-                else if (deleting && ci === 0) { deleting = false; ti = (ti + 1) % texts.length; delay = 500; }
-                setTimeout(tick, delay);
-            }
-            setTimeout(tick, 1000);
-        })();
-
-
         /* =========================================
            PHASE 2: CAROUSEL LOGIC
            ========================================= */
@@ -1449,6 +1589,8 @@
         const modalClose = document.getElementById('modal-close');
         const modalTitle = document.getElementById('modal-title');
         const modalDesc = document.getElementById('modal-desc');
+        const modalTech = document.getElementById('modal-tech');
+        const modalResults = document.getElementById('modal-results');
         const modalGithub = document.getElementById('modal-github');
 
         let currentAngle = 0;
@@ -1601,6 +1743,8 @@
         function openModal(proj) {
             modalTitle.textContent = proj.title;
             modalDesc.textContent = proj.description;
+            modalTech.innerHTML = (proj.tech || []).map(tech => `<span class="tech-pill">${tech}</span>`).join('');
+            modalResults.textContent = Array.isArray(proj.results) ? proj.results.join(' ') : (proj.results || '');
             modalGithub.href = proj.githubLink || '#';
             modalGithub.target = '_blank';
             modalGithub.rel = 'noopener noreferrer';
