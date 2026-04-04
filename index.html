@@ -845,10 +845,158 @@
             text-shadow: 0 0 15px rgba(0, 242, 254, 0.8);
         }
 
+        /* =========================================
+           SKILLS DASHBOARD
+           ========================================= */
+
+        #skills {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 130px 24px 80px;
+        }
+
+        .skills-container {
+            width: 100%;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+
+        .skills-panel {
+            background: rgba(16, 16, 26, 0.68);
+            border: 1px solid rgba(0, 242, 254, 0.18);
+            border-radius: 24px;
+            padding: 34px 30px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35), inset 0 0 35px rgba(0, 242, 254, 0.04);
+        }
+
+        .skills-panel-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #f6fcff;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.28);
+        }
+
+        .tech-group {
+            margin-bottom: 24px;
+        }
+
+        .tech-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-group-title {
+            font-size: 0.82rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(0, 242, 254, 0.78);
+            margin-bottom: 12px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 242, 254, 0.22);
+            background: rgba(10, 16, 22, 0.6);
+            color: rgba(228, 249, 255, 0.9);
+            font-size: 0.79rem;
+            line-height: 1;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+            border-color: rgba(0, 242, 254, 0.7);
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.34);
+        }
+
+        .soft-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .soft-item {
+            display: grid;
+            grid-template-columns: 28px 1fr;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .soft-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .soft-icon {
+            font-size: 1.05rem;
+            line-height: 1.3;
+            filter: drop-shadow(0 0 0 rgba(0, 242, 254, 0));
+            transition: filter 0.25s ease, transform 0.25s ease;
+        }
+
+        .soft-main {
+            font-size: 0.99rem;
+            color: rgba(245, 254, 255, 0.92);
+            font-weight: 600;
+            margin-bottom: 3px;
+            transition: color 0.25s ease;
+        }
+
+        .soft-sub {
+            font-size: 0.84rem;
+            color: rgba(255, 255, 255, 0.56);
+            line-height: 1.45;
+        }
+
+        .soft-item:hover .soft-icon {
+            transform: translateY(-1px);
+            filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.55));
+        }
+
+        .soft-item:hover .soft-main {
+            color: #00f2fe;
+        }
+
+        @media (max-width: 980px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .profile-hub {
                 padding: 16px 20px;
                 gap: 8px;
+            }
+
+            #skills {
+                padding: 110px 16px 60px;
+            }
+
+            .skills-panel {
+                padding: 24px 20px;
+                border-radius: 20px;
+            }
+
+            .skills-panel-title {
+                font-size: 1.28rem;
+                margin-bottom: 18px;
             }
 
             .interaction-hint {
@@ -1417,6 +1565,7 @@
         <nav class="global-nav">
             <a href="#" data-target="home-view" class="nav-link active">Home</a>
             <a href="#" data-target="education-view" class="nav-link">Education</a>
+            <a href="#" data-target="skills-view" class="nav-link">Skills</a>
             <a href="#" data-target="achievements-view" class="nav-link">Achievements</a>
             <a href="#" data-target="contact-view" class="nav-link">Contact</a>
         </nav>
@@ -1540,6 +1689,99 @@
             <!-- Cards injected by renderEducationTimeline() -->
 
         </div><!-- end .timeline-container -->
+    </main>
+
+    <!-- SKILLS VIEW -->
+    <main id="skills-view" class="view-section" style="display:none; opacity:0;">
+        <section id="skills">
+            <div class="skills-container">
+                <article class="skills-panel tech-panel">
+                    <h2 class="skills-panel-title">Technical Arsenal</h2>
+
+                    <div class="tech-group">
+                        <h3 class="tech-group-title">Languages</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-group">
+                        <h3 class="tech-group-title">Data &amp; Machine Learning</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Scikit-Learn</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Seaborn</span>
+                            <span class="tech-tag">Predictive Modeling</span>
+                        </div>
+                    </div>
+
+                    <div class="tech-group">
+                        <h3 class="tech-group-title">Tools &amp; Core</h3>
+                        <div class="tech-tags">
+                            <span class="tech-tag">AWS (SageMaker)</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Jupyter</span>
+                            <span class="tech-tag">OOP</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="skills-panel soft-panel">
+                    <h2 class="skills-panel-title">Professional Attributes</h2>
+                    <ul class="soft-list">
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">💡</span>
+                            <div>
+                                <p class="soft-main">Critical Problem Solving</p>
+                                <p class="soft-sub">Algorithmic thinking &amp; logic breakdown</p>
+                            </div>
+                        </li>
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">🗣️</span>
+                            <div>
+                                <p class="soft-main">Technical Communication</p>
+                                <p class="soft-sub">Bridging complex code and clear concepts</p>
+                            </div>
+                        </li>
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">🤝</span>
+                            <div>
+                                <p class="soft-main">Team Leadership &amp; Handling</p>
+                                <p class="soft-sub">Agile coordination &amp; peer support</p>
+                            </div>
+                        </li>
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">📊</span>
+                            <div>
+                                <p class="soft-main">Project Management</p>
+                                <p class="soft-sub">End-to-end delivery &amp; workflow planning</p>
+                            </div>
+                        </li>
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">🌊</span>
+                            <div>
+                                <p class="soft-main">Adaptability</p>
+                                <p class="soft-sub">Quickly mastering new environments and tech stacks</p>
+                            </div>
+                        </li>
+                        <li class="soft-item">
+                            <span class="soft-icon" aria-hidden="true">⏱️</span>
+                            <div>
+                                <p class="soft-main">Time Management</p>
+                                <p class="soft-sub">Prioritization &amp; meeting strict deadlines</p>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </section>
     </main>
 
     <!-- ACHIEVEMENTS VIEW -->
