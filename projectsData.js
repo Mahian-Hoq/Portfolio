@@ -68,6 +68,16 @@ const portfolioData = {
 
     "A Software Developer": [
         {
+            id: "vibeverse-app",
+            title: "VibeVerse",
+            icon: "🛒",
+            tag: "Full-Stack",
+            description: "A fully developed full-stack web application featuring secure user management, seamless product browsing, and dynamic media handling. Live at: https://www.vibeverse.studio/",
+            tech: ["Supabase", "Cloudinary", "Frontend", "Backend"],
+            results: "Engineered a dual-database architecture, separating relational data management (Supabase) from optimized product image storage (Cloudinary) for maximum performance.",
+            githubLink: "https://github.com/Mahian-Hoq/vibeverse"
+        },
+        {
             id: "secure-vault",
             title: "Secure Vault File Encryption",
             icon: "🔐",
@@ -107,6 +117,7 @@ const portfolioData = {
             results: "Implemented structured account handling and transaction history with persistent database operations.",
             githubLink: "https://github.com/Mahian-Hoq/Banking-System-with-DB"
         }
+
     ]
 
 };

@@ -7,6 +7,7 @@
     <title>Mahian Hoq Mozumder - Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:wght@500&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         * {
             margin: 0;
@@ -1546,6 +1547,303 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
+        /* =========================================
+           PROJECTS HUB (ZIG-ZAG SWIPER)
+           ========================================= */
+        #projects-hub.view-section {
+            width: 100%;
+            padding: 130px 20px 90px;
+        }
+
+        .projects-hub-shell {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            gap: 34px;
+        }
+
+        .projects-hub-heading {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .projects-hub-heading .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            color: rgba(0, 242, 254, 0.6);
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .projects-hub-heading h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffffff 40%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .projects-row {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.9fr);
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        .projects-row--reverse {
+            grid-template-columns: minmax(300px, 0.9fr) minmax(0, 1.2fr);
+        }
+
+        .projects-carousel-cell,
+        .projects-details-cell {
+            min-width: 0;
+        }
+
+        .project-row-wrapper {
+            position: relative;
+            height: 100%;
+            padding: 18px 12px 58px;
+            border-radius: 26px;
+            background: rgba(16, 16, 26, 0.52);
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28), inset 0 0 26px rgba(0, 242, 254, 0.04);
+            overflow: hidden;
+        }
+
+        .projects-row--reverse .project-row-wrapper {
+            min-height: 360px;
+        }
+
+        .projects-row .swiper {
+            width: 100%;
+            padding: 28px 8px 12px;
+        }
+
+        .projects-row .swiper-wrapper {
+            align-items: center;
+        }
+
+        .projects-row .swiper-slide {
+            width: 240px;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background: rgba(20, 20, 30, 0.72);
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+            transition: transform 0.35s ease, opacity 0.35s ease, filter 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            backface-visibility: hidden;
+        }
+
+        .projects-row .swiper-slide .slide-card {
+            text-align: center;
+            color: #fff;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .projects-row .slide-icon {
+            font-size: 2.25rem;
+            line-height: 1;
+        }
+
+        .projects-row .slide-title {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.35;
+        }
+
+        .projects-row .slide-tag {
+            font-size: 0.76rem;
+            letter-spacing: 1px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 242, 254, 0.22);
+            background: rgba(0, 242, 254, 0.08);
+            color: rgba(225, 250, 255, 0.9);
+        }
+
+        .projects-row .swiper-slide:not(.swiper-slide-active) {
+            filter: blur(5px);
+            opacity: 0.45;
+            transform: scale(0.84);
+        }
+
+        .projects-row .swiper-slide.swiper-slide-active {
+            filter: blur(0px);
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 0 42px rgba(0, 242, 254, 0.18);
+            border-color: rgba(0, 242, 254, 0.5);
+        }
+
+        .projects-row .swiper-slide.swiper-slide-next,
+        .projects-row .swiper-slide.swiper-slide-prev {
+            transform: scale(0.88);
+        }
+
+        .projects-row .swiper-button-prev,
+        .projects-row .swiper-button-next {
+            width: 46px;
+            height: 46px;
+            top: auto;
+            bottom: 14px;
+            margin-top: 0;
+            border-radius: 50%;
+            background: rgba(20, 20, 30, 0.84);
+            border: 1px solid rgba(0, 242, 254, 0.22);
+            color: #00f2fe;
+            box-shadow: 0 0 18px rgba(0, 242, 254, 0.08);
+        }
+
+        .projects-row .swiper-button-prev::after,
+        .projects-row .swiper-button-next::after {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        .projects-row .swiper-button-prev {
+            left: calc(50% - 56px);
+        }
+
+        .projects-row .swiper-button-next {
+            right: calc(50% - 56px);
+        }
+
+        .project-info-panel {
+            height: 100%;
+            min-height: 360px;
+            padding: 28px;
+            border-radius: 26px;
+            background: rgba(16, 16, 26, 0.68);
+            border: 1px solid rgba(0, 242, 254, 0.12);
+            color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 14px;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28), inset 0 0 26px rgba(0, 242, 254, 0.04);
+        }
+
+        .project-info-panel.is-empty {
+            color: rgba(255, 255, 255, 0.55);
+        }
+
+        .project-info-panel h2 {
+            margin: 0;
+            font-size: 1.4rem;
+            line-height: 1.35;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(0, 242, 254, 0.18);
+        }
+
+        .project-info-panel p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.72);
+            line-height: 1.7;
+        }
+
+        .project-desc {
+            line-height: 1.75;
+        }
+
+        .project-results {
+            line-height: 1.65;
+        }
+
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 11px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 242, 254, 0.24);
+            background: rgba(0, 242, 254, 0.07);
+            color: rgba(228, 249, 255, 0.92);
+            font-size: 0.78rem;
+            line-height: 1;
+        }
+
+        .github-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin-top: 4px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            border: 1px solid rgba(0, 242, 254, 0.35);
+            background: rgba(0, 242, 254, 0.08);
+            color: #d6f7ff;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .github-btn:hover {
+            color: #00f2fe;
+            border-color: rgba(0, 242, 254, 0.7);
+            background: rgba(0, 242, 254, 0.16);
+        }
+
+        @media (max-width: 1100px) {
+            .projects-row,
+            .projects-row--reverse {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-row--reverse .projects-carousel-cell {
+                order: 2;
+            }
+
+            .projects-row--reverse .projects-details-cell {
+                order: 1;
+            }
+
+            .project-info-panel,
+            .project-row-wrapper {
+                min-height: unset;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #projects-hub.view-section {
+                padding: 110px 16px 70px;
+            }
+
+            .projects-row .swiper-slide {
+                width: 210px;
+                height: 210px;
+            }
+
+            .project-info-panel {
+                padding: 22px 18px;
+            }
+
+            .projects-row .swiper-button-prev {
+                left: calc(50% - 54px);
+            }
+
+            .projects-row .swiper-button-next {
+                right: calc(50% - 54px);
+            }
+        }
     </style>
 </head>
 
@@ -1564,8 +1862,9 @@
     <header id="global-header">
         <nav class="global-nav">
             <a href="#" data-target="home-view" class="nav-link active">Home</a>
-            <a href="#" data-target="education-view" class="nav-link">Education</a>
+            <a href="#projects-hub" data-target="projects-hub" class="nav-link">Projects</a>
             <a href="#" data-target="skills-view" class="nav-link">Skills</a>
+            <a href="#" data-target="education-view" class="nav-link">Education</a>
             <a href="#" data-target="achievements-view" class="nav-link">Achievements</a>
             <a href="#" data-target="contact-view" class="nav-link">Contact</a>
         </nav>
@@ -1655,6 +1954,69 @@
         </section>
 
     </main><!-- end #home-view -->
+
+    <!-- =========================================
+         PROJECTS HUB VIEW
+         ========================================= -->
+    <main id="projects-hub" class="view-section" style="display:none; opacity:0;">
+        <div class="projects-hub-shell">
+            <div class="projects-hub-heading">
+                <p class="section-label">PROJECTS HUB</p>
+                <h1>Project Showcase</h1>
+            </div>
+
+            <section class="projects-row">
+                <div class="projects-carousel-cell">
+                    <div class="project-row-wrapper" data-key="A Software Developer" data-row="software">
+                        <div id="swiper-software" class="swiper projects-swiper">
+                            <div class="swiper-wrapper"></div>
+                        </div>
+                        <div class="projects-nav">
+                            <button class="swiper-button-prev" type="button" aria-label="Previous project"></button>
+                            <button class="swiper-button-next" type="button" aria-label="Next project"></button>
+                        </div>
+                    </div>
+                </div>
+                <aside id="panel-software" class="project-info-panel is-empty projects-details-cell" data-target-panel="A Software Developer">
+                    <p>Select a project to see details.</p>
+                </aside>
+            </section>
+
+            <section class="projects-row projects-row--reverse">
+                <aside id="panel-ml" class="project-info-panel is-empty projects-details-cell" data-target-panel="A Machine Learning Engineer">
+                    <p>Select a project to see details.</p>
+                </aside>
+                <div class="projects-carousel-cell">
+                    <div class="project-row-wrapper" data-key="A Machine Learning Engineer" data-row="ml">
+                        <div id="swiper-ml" class="swiper projects-swiper">
+                            <div class="swiper-wrapper"></div>
+                        </div>
+                        <div class="projects-nav">
+                            <button class="swiper-button-prev" type="button" aria-label="Previous project"></button>
+                            <button class="swiper-button-next" type="button" aria-label="Next project"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="projects-row">
+                <div class="projects-carousel-cell">
+                    <div class="project-row-wrapper" data-key="A Data Science Analyst" data-row="ds">
+                        <div id="swiper-ds" class="swiper projects-swiper">
+                            <div class="swiper-wrapper"></div>
+                        </div>
+                        <div class="projects-nav">
+                            <button class="swiper-button-prev" type="button" aria-label="Previous project"></button>
+                            <button class="swiper-button-next" type="button" aria-label="Next project"></button>
+                        </div>
+                    </div>
+                </div>
+                <aside id="panel-ds" class="project-info-panel is-empty projects-details-cell" data-target-panel="A Data Science Analyst">
+                    <p>Select a project to see details.</p>
+                </aside>
+            </section>
+        </div>
+    </main>
 
     <!-- EDUCATION VIEW -->
     <main id="education-view" class="view-section" style="display:none; opacity:0;">
@@ -1866,6 +2228,7 @@
 
 
     <script src="projectsData.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         /* =========================================
            PHASE 2: CAROUSEL LOGIC
@@ -1894,6 +2257,11 @@
         let currentAngle = 0;
         let cardCount = 0;
         let currentIndex = 0;
+
+        const projectsHubState = {
+            initialized: false,
+            swipers: []
+        };
 
         /* --- REVEAL OBSERVER --- */
         const revealObserver = new IntersectionObserver((entries) => {
@@ -2114,6 +2482,18 @@
                     if (targetId === 'achievements-view') {
                         renderAchievements();
                     }
+
+                    // Build and size the Projects Hub only once it is visible.
+                    if (targetId === 'projects-hub') {
+                        renderProjectsHub();
+                        window.requestAnimationFrame(() => {
+                            projectsHubState.swipers.forEach((swiper) => {
+                                if (swiper && typeof swiper.update === 'function') {
+                                    swiper.update();
+                                }
+                            });
+                        });
+                    }
                 }, 350); // Match the CSS transition duration
             });
         });
@@ -2267,6 +2647,130 @@
                 grid.appendChild(card);
             });
         }
+        
+        /* =========================================
+           PROJECTS HUB (standalone Zig-Zag Swiper view)
+           ========================================= */
+        function renderProjectsHub() {
+            const projectRows = document.querySelectorAll('#projects-hub .project-row-wrapper');
+
+            if (!projectRows.length || typeof Swiper === 'undefined' || typeof portfolioData === 'undefined') return;
+
+            if (projectsHubState.initialized) {
+                projectsHubState.swipers.forEach((swiper) => {
+                    if (swiper && typeof swiper.update === 'function') {
+                        swiper.update();
+                    }
+                });
+                return;
+            }
+
+            projectsHubState.swipers = [];
+
+            projectRows.forEach((row) => {
+                const categoryKey = row.getAttribute('data-key');
+                const categoryData = getProjectCategoryData(categoryKey);
+
+                const swiperWrapper = row.querySelector('.swiper-wrapper');
+                const swiperContainer = row.querySelector('.projects-swiper');
+                const nextButton = row.querySelector('.swiper-button-next');
+                const prevButton = row.querySelector('.swiper-button-prev');
+                const panel = row.closest('.projects-row')?.querySelector('.project-info-panel');
+
+                if (!swiperWrapper || !swiperContainer || !panel || !categoryData.length) {
+                    return;
+                }
+
+                swiperWrapper.innerHTML = '';
+
+                categoryData.forEach((project) => {
+                    if (!project) return;
+                    swiperWrapper.insertAdjacentHTML('beforeend', buildProjectSlide(project));
+                });
+
+                const rowSwiper = new Swiper(swiperContainer, {
+                    effect: 'coverflow',
+                    centeredSlides: true,
+                    slidesPerView: 3,
+                    autoplay: false,
+                    slideToClickedSlide: true,
+                    watchSlidesProgress: true,
+                    navigation: {
+                        nextEl: nextButton,
+                        prevEl: prevButton
+                    },
+                    coverflowEffect: {
+                        rotate: 25,
+                        stretch: 0,
+                        depth: 120,
+                        modifier: 1,
+                        slideShadows: false
+                    },
+                    on: {
+                        init: function () {
+                            updateSidePanel(row, categoryData[this.activeIndex]);
+                        },
+                        slideChange: function () {
+                            updateSidePanel(row, categoryData[this.activeIndex]);
+                        }
+                    }
+                });
+
+                projectsHubState.swipers.push(rowSwiper);
+            });
+
+            projectsHubState.initialized = true;
+        }
+
+        function getProjectCategoryData(categoryKey) {
+            if (typeof portfolioData === 'undefined' || !categoryKey) return [];
+
+            const categoryData = portfolioData[categoryKey];
+            return Array.isArray(categoryData) ? categoryData : [];
+        }
+
+        function buildProjectSlide(project) {
+            const id = project?.id || '';
+            const icon = project?.icon || '';
+            const title = project?.title || '';
+            const tag = project?.tag || '';
+
+            return `
+                <div class="swiper-slide" data-id="${id}">
+                    <div class="slide-card">
+                        <div class="slide-icon">${icon}</div>
+                        <h3 class="slide-title">${title}</h3>
+                        <span class="slide-tag">${tag}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function updateSidePanel(rowWrapper, project) {
+            if (!rowWrapper || !project) return;
+
+            const categoryKey = rowWrapper.getAttribute('data-key');
+            const realPanel = document.querySelector(`.project-info-panel[data-target-panel="${categoryKey}"]`);
+
+            if (!realPanel) return;
+
+            const techPills = Array.isArray(project.tech)
+                ? project.tech.map((tech) => `<span class="tech-pill">${tech}</span>`).join('')
+                : '';
+
+            const resultsText = Array.isArray(project.results)
+                ? project.results.join(' ')
+                : (project.results || '');
+
+            realPanel.innerHTML = `
+                <h2>${project.title || ''}</h2>
+                <p class="project-desc">${project.description || ''}</p>
+                <div class="tech-container">${techPills}</div>
+                <p class="project-results"><strong>Impact:</strong> ${resultsText}</p>
+                <a href="${project.githubLink || '#'}" target="_blank" rel="noopener noreferrer" class="github-btn">View on GitHub</a>
+            `;
+        }
+
     </script>
 </body>
 
